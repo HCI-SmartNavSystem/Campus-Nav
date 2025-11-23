@@ -1,0 +1,221 @@
+/* MOBILE: Select Route screen */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fcf8f5;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;              /* page fixed, routes scroll inside */
+}
+
+.main-container {
+    width: 100%;
+    max-width: 430px;              /* similar to phone width */
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.header-bar {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    flex: 0 0 auto;
+}
+
+.back-button {
+    font-size: 1.4em;
+    color: black;
+    text-decoration: none;
+    margin-right: 12px;
+    line-height: 1;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.8em;
+    color: #666;
+    margin: 0;
+}
+
+/* Map section */
+
+.map-section {
+    width: 100%;
+    flex: 0 0 35vh;                /* like in Figma phone */
+    background-color: #EBE3D9;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Map tags */
+
+.location-tag {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #555;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tag-start {
+    top: 16px;
+    left: 16px;
+}
+
+.tag-end {
+    bottom: 16px;
+    right: 16px;
+    background-color: #E0D3BC;
+    color: #333;
+}
+
+/* Routes list */
+
+.routes-container {
+    width: 100%;
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;              /* list scrolls */
+}
+
+.section-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #222;
+    margin: 8px 0 16px 0;
+}
+
+.route-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.route-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s, border-color 0.1s;
+}
+
+.route-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border-color: #ddd;
+}
+
+.route-card.selected {
+    border-color: #38c1c4;
+    box-shadow: 0 0 0 2px rgba(56, 193, 196, 0.15);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    margin-right: 12px;
+    flex-shrink: 0;
+    color: white;
+}
+
+.icon-shortest   { background-color: #17A2B8; }
+.icon-accessible { background-color: #D4AF37; }
+.icon-shaded     { background-color: #8D8D5E; }
+
+.route-info {
+    flex-grow: 1;
+}
+
+.route-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 0.95em;
+    margin: 0 0 3px 0;
+}
+
+.route-desc {
+    color: #888;
+    font-size: 0.8em;
+    margin: 0 0 6px 0;
+}
+
+.route-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 0.75em;
+    color: #666;
+    font-weight: 500;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+}
+
+.stat-icon {
+    margin-right: 4px;
+    font-size: 1em;
+}
+
+#message-box {
+    position: fixed; 
+    bottom: 18px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    background-color: #38c1c4; 
+    color: white; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    display: none;
+    font-size: 0.9em;
+    z-index: 100;
+}

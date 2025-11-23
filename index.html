@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="css/mobile/profile.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/profile.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/profile.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+
+</head>
+
+<body>
+    <header class="header-bar">
+        <div class="header-content">
+            <a href="#" style="font-weight: 600; color: white; text-decoration: none;">HOME</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <div style="margin-bottom: 30px; padding: 0 10px;">
+            <h1 style="font-size: 2em; font-weight: 700; color: #333;">Who's using Smart Campus?</h1>
+            <p style="font-size: 1em; color: #666;">Select the profile that best matches you so we can personalize your routes.</p>
+        </div>
+
+        <div id="profile-selection" class="card-grid">
+
+            <div class="profile-card" data-profile="Student">
+                <div class="icon-placeholder profile">🎓</div>
+                <p style="font-weight: 600; margin: 0; font-size: 1em;">Student</p>
+            </div>
+
+            <div class="profile-card" data-profile="Visitor">
+                <div class="icon-placeholder profile">🗂</div>
+                <p style="font-weight: 600; margin: 0; font-size: 1em;">Visitor</p>
+            </div>
+
+            <div class="profile-card" data-profile="Staff">
+                <div class="icon-placeholder profile">👋</div>
+                <p style="font-weight: 600; margin: 0; font-size: 1em;">Staff</p>
+            </div>
+
+            <div class="profile-card" data-profile="Accessibility User">
+                <div class="icon-placeholder profile">♿</div>
+                <p style="font-weight: 600; margin: 0; font-size: 1em;">Accessibility User</p>
+            </div>
+
+        </div>
+
+        <div class="preference-section">
+            
+            <label class="checkbox-container">
+                <input type="checkbox" id="save-preference" name="save-preference">
+                <span class="checkmark"></span>
+                Save this preference for future use
+            </label>
+            
+            <p class="helper-text">This will speed up navigation next time.</p>
+
+        </div>
+
+        <a href = "campus_navigator.html"><button id="continue-button" disabled class="action-button" onclick = >
+            Continue →
+        </button></a>
+        
+        <div id="message-box" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; border-radius: 8px; background-color: #38c1c4; color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: none;"></div>
+
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Navigation Page</title>
+
+    <link rel="stylesheet" href="css/mobile/nav_map.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/nav_map.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/nav_map.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+
+</head>
+<body>
+    <div class="map-background">
+        <img src="assets/imgs/nav_map.png" alt="Navigation Map" class="map-image">
+    </div>
+    <div class="ui-layer">
+        <div class="top-controls">
+            <a href="routes.html" class="close-button">✕</a>
+            <div class="instruction-card">
+                <div class="instruction-left">
+                    <div class="direction-icon">↑</div>
+                    <div class="instruction-text">
+                        <div class="main-instruction">Continue Straight</div>
+                        <div class="sub-instruction">on Main Campus Path</div>
+                        <div class="distance-text">Distance</div>
+                        <div class="distance-value">0.3 km</div>
+                    </div>
+                </div>
+                <div class="instruction-right">
+                    <div class="eta-label">ETA</div>
+                    <div class="eta-value">4 min</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar" id="finish-trigger">
+            <div class="status-left">
+                <span class="compass-icon">🧭</span>
+                <div class="status-text">
+                    <span class="navigating-label">Navigating to</span>
+                    <span class="destination-name">Campuss Parking</span>
+                </div>
+            </div>
+            <div class="status-right">
+                <span class="total-time">4 min</span>
+                <span class="total-distance">0.3 km</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/nav_map.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

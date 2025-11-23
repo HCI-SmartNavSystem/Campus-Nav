@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab</title>
+
+    <link rel="stylesheet" href="css/mobile/location_detail.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/location_detail.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/location_detail.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+</head>
+
+
+<body>
+    <div class="main-container">
+        
+        <header class="header-bar">
+            <a href="campus_navigator.html" id="back-link">&lt; <span id="header-title-text">Location</span></a>
+        </header>
+
+        <div class="banner-image" id="dynamic-banner"></div>
+
+        <div class="content-section">
+            
+            <div class="title-group">
+                <h2 id="page-title">Location Name</h2>
+                <p id="page-description">Location description goes here.</p>
+            </div>
+            
+            <div class="info-card">
+                <span class="icon">🕑</span>
+                <p id="page-hours">Opening Hours: ...</p>
+            </div>
+
+            <h2 class="facility-header">Facilities</h2>
+            <div class="facility-grid" id="facility-grid">
+            </div>
+            <div class="action-container">
+                <a href="view_map.html">
+                <div class="action-button view-map-button" id="view-map">
+                    <span class="button-icon">📍</span>View on Map
+                </div>
+                </a>
+                <a href="start_nav.html">
+                <div class="action-button start-nav-button" id="start-navigation">
+                    <span class="button-icon">→</span>Start Navigation
+                </div>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div id="message-box" style="display: none;"></div>
+
+    </div>
+
+    <script src="js/location_detail.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

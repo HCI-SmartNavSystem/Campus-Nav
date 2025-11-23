@@ -1,0 +1,75 @@
+<html>
+    <head>
+            <title>
+                Campus Navigator
+            </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/mobile/arrived.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/arrived.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/arrived.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+
+
+    </head>
+
+    <div class="main-container">
+        
+        <div class="success-icon-container">
+            <div class="glow-effect"></div>
+            <div class="icon-circle">✓</div>
+        </div>
+
+        <div class="title-text">
+            You've<br>Arrived!
+        </div>
+        
+        <div class="subtitle-text">Welcome to</div>
+        
+        <div class="location-badge">Labs</div>
+
+        <div class="summary-card">
+            <div class="card-label">Journey Completed</div>
+            <div>
+                <span class="card-value">4</span><br>
+                <span class="card-unit">min</span>
+            </div>
+            <div class="card-sub">travel time</div>
+        </div>
+        <div class="button-group">
+            <a href="index.html">
+            <button class="btn btn-primary">
+                <span class="btn-icon">🏠</span>
+                <div class="btn-content">
+                    <span>Go</span>
+                    <span>Home</span>
+                </div>
+            </button>
+            </a>
+            <a href="index.html">
+            <button class="btn btn-secondary">
+                <span class="btn-icon">📍</span>
+                <div class="btn-content">
+                    <span>Explore</span>
+                    <span>Nearby</span>
+                </div>
+            </button>
+            </a>
+        </div>
+
+        <div class="dots-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+    </div>
+    <script src="js/arrived.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

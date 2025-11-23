@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View on Map Display</title>
+
+    <link rel="stylesheet" href="css/mobile/view_map.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/view_map.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/view_map.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+</head>
+<body>
+    <header class="header-bar">
+        <a href="#" id="back-link">&#10094;</a> View on Map – <span id="header-dest">Labs</span>
+    </header>
+    <div class="main-content">
+        <div class="map-card">
+            <h2 class="map-title">Campus Map (Central Zone)</h2>
+            <div class="map-container">
+                <img src="assets/imgs/lab_map.png" alt="Map Area" class="map-placeholder">
+            </div>
+            <div class="controls-container">
+                <div class="legend-container">
+                    <div class="legend-item"><span class="dot dot-you"></span> You</div>
+                    <div class="legend-item"><span class="dot dot-dest"></span> Destination</div>
+                    <div class="legend-item"><span class="dot dot-path"></span> Path</div>
+                </div>
+                <button class="nav-button" id="start-nav-btn">
+                    <span class="nav-arrow">&rarr;</span> Start Navigation
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/view_map.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

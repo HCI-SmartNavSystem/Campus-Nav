@@ -1,0 +1,136 @@
+/* ============= MOBILE (<= 767px) ============= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;   /* take full width on small screens */
+}
+
+.header-bar {
+    width: 100%;
+    background: linear-gradient(135deg, #17A2B8, #5EB3C4);
+    color: white;
+    padding: 16px 0 70px 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.header-content h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.header-content p {
+    font-size: 0.9em;
+    opacity: 0.95;
+    margin: 0;
+}
+
+.main-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 12px 24px;
+    margin-top: -45px;
+    z-index: 10;
+}
+
+.search-box {
+    background-color: white;
+    border-radius: 14px;
+    padding: 10px 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 18px;
+    font-size: 0.95em;
+    color: #666;
+    font-weight: 600;
+}
+
+.list-header {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 12px 2px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.destination-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1em;
+    flex-shrink: 0;
+}
+
+.card-icon.library { background-color: #17A2B8; }
+.card-icon.canteen { background-color: #D4AF37; }
+.card-icon.parking { background-color: #A88F5F; }
+.card-icon.admin  { background-color: #5EB3C4; }
+.card-icon.labs   { background-color: #17A2B8; }
+
+.card-details {
+    flex-grow: 1;
+}
+
+.card-details p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.card-details small {
+    color: #666;
+    font-size: 0.8em;
+}
+
+#message-box {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #38c1c4;
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-size: 0.85em;
+    z-index: 100;
+}

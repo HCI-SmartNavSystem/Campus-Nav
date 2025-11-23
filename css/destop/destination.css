@@ -1,0 +1,136 @@
+/* ============= DESKTOP (>= 1024px) ============= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-bar {
+    width: 100%;
+    background: linear-gradient(135deg, #17A2B8, #5EB3C4);
+    color: white;
+    padding: 24px 0 110px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-content h1 {
+    font-size: 2.1em;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+.header-content p {
+    font-size: 1.05em;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.main-container {
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 24px 40px;
+    margin-top: -70px;
+    z-index: 10;
+}
+
+.search-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 18px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 600;
+}
+
+.list-header {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 20px 6px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.destination-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4em;
+    flex-shrink: 0;
+}
+
+.card-icon.library { background-color: #17A2B8; }
+.card-icon.canteen { background-color: #D4AF37; }
+.card-icon.parking { background-color: #A88F5F; }
+.card-icon.admin  { background-color: #5EB3C4; }
+.card-icon.labs   { background-color: #17A2B8; }
+
+.card-details {
+    flex-grow: 1;
+}
+
+.card-details p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+}
+
+.card-details small {
+    color: #666;
+    font-size: 0.9em;
+}
+
+#message-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 8px;
+    background-color: #38c1c4;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-size: 1em;
+    z-index: 100;
+}

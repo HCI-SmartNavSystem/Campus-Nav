@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Navigation Page</title>
+
+    <link rel="stylesheet" href="css/mobile/start_nav.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/start_nav.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/start_nav.css" media="screen and (min-width: 1024px)">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-bar">
+            <a href="#" class="back-button" id="back-link">←</a>
+            <div class="header-text">
+                <h1 class="header-title">Select Route</h1>
+                <p class="header-subtitle">to <span id="header-dest">Labs</span></p>
+            </div>
+        </header>
+        <div class="map-section">
+            <img src="uploaded:image_88a0b7.png-8774b2e8-e3f7-494e-9ff5-b931e9eaaebb" alt="Route Map" class="map-image">
+            <div class="location-tag tag-start">Your Location</div>
+            <div class="location-tag tag-end">Labs</div>
+        </div>
+        <div class="routes-container">
+            <h2 class="section-title">Available Routes</h2>
+            <div class="route-list">
+                <div class="route-card" data-route="Shortest Route">
+                    <div class="icon-box icon-shortest">🚶</div>
+                    <div class="route-info">
+                        <p class="route-name">Shortest Route</p>
+                        <p class="route-desc">Direct path via main walkway</p>
+                        <div class="route-stats"><span class="stat-item"><span class="stat-icon">👣</span> 0.3 km</span><span class="stat-item"><span class="stat-icon">⏱</span> 4 min</span></div>
+                    </div>
+                </div>
+                <div class="route-card" data-route="Accessible Route">
+                    <div class="icon-box icon-accessible">♿</div>
+                    <div class="route-info">
+                        <p class="route-name">Accessible Route</p>
+                        <p class="route-desc">Wheelchair-friendly with ramps</p>
+                        <div class="route-stats"><span class="stat-item"><span class="stat-icon">👣</span> 0.4 km</span><span class="stat-item"><span class="stat-icon">⏱</span> 6 min</span></div>
+                    </div>
+                </div>
+                <div class="route-card" data-route="Shaded Path">
+                    <div class="icon-box icon-shaded">🌳</div>
+                    <div class="route-info">
+                        <p class="route-name">Shaded Path</p>
+                        <p class="route-desc">Tree-covered route, cooler walk</p>
+                        <div class="route-stats"><span class="stat-item"><span class="stat-icon">👣</span> 0.5 km</span><span class="stat-item"><span class="stat-icon">⏱</span> 7 min</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="message-box" style="display: none;"></div>
+    </div>
+    <script src="js/start_nav.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

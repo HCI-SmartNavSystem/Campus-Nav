@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Routes</title>
+
+    <link rel="stylesheet" href="css/mobile/routes.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet/routes.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link rel="stylesheet" href="css/destop/routes.css" media="screen and (min-width: 1024px)">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-bar">
+            <a href="start_nav.html" class="back-button">←</a>
+            <div class="header-title">Confirm Route</div>
+        </header>
+        <div class="content-area">
+            <div class="selected-route-card">
+                <div class="route-label">Selected Route</div>
+                <div class="route-name">Accessible Route</div>
+                <div class="route-stats"><div class="stat-chip"><span class="stat-icon">♿</span> 0.4 km</div><div class="stat-chip"><span class="stat-icon">⏱</span> 6 min</div></div>
+            </div>
+            <div>
+                <div class="section-label">Destination</div>
+                <div class="destination-card">
+                    <div class="dest-icon">📍</div>
+                    <div class="dest-info"><p class="dest-name"></p><p class="dest-sub">Main Campus</p></div>
+                </div>
+            </div>
+            <div>
+                <div class="section-label">Route Preview</div>
+                <div class="preview-card">
+                    <div class="step-list"></div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-footer">
+            <button class="start-button" id="start-nav-btn">
+                <span class="btn-icon">🧭 Start</span>
+                <span>Navigation</span>
+            </button>
+        </div>
+    </div>
+    <script src="js/routes.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>
