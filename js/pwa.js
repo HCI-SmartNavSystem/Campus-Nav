@@ -1,3 +1,9 @@
+// js/pwa.js
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./service-worker.js");
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")   // 👈 IMPORTANT: "./", not "/"
+      .then(reg => console.log("SW registered", reg))
+      .catch(err => console.error("SW registration failed", err));
+  });
 }
