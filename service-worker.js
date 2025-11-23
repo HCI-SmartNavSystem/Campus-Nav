@@ -1,6 +1,6 @@
 // js/pwa.js
 
-// 1. Register service worker (keep this)
+// 1. Register service worker
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -10,7 +10,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// 2. Global offline/online notification (ONLY on change)
+// 2. Only show messages when the connection actually CHANGES
 document.addEventListener("DOMContentLoaded", () => {
   let messageBox = document.getElementById("message-box");
 
@@ -39,28 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
-  // Track last known status per tab
-  let lastStatus = sessionStorage.getItem("lastConnectionStatus");
-  if (!lastStatus) {
-    lastStatus = navigator.onLine ? "online" : "offline";
-    sessionStorage.setItem("lastConnectionStatus", lastStatus);
-  }
+  // 👉 NO initial status check here. Nothing runs on load.
 
-  function handleOffline() {
-    const previous = sessionStorage.getItem("lastConnectionStatus");
-    if (previous === "offline") return; // already offline, don't spam
-    sessionStorage.setItem("lastConnectionStatus", "offline");
+  // Only react to REAL changes:
+  window.addEventListener("offline", () => {
     showMessage("You are offline. Showing saved content.");
-  }
+  });
 
-  function handleOnline() {
-    const previous = sessionStorage.getItem("lastConnectionStatus");
-    if (previous === "online") return; // already online, don't spam
-    sessionStorage.setItem("lastConnectionStatus", "online");
+  window.addEventListener("online", () => {
     showMessage("You are back online.");
-  }
-
-  // 🔹 Only react to actual changes
-  window.addEventListener("offline", handleOffline);
-  window.addEventListener("online", handleOnline);
+  });
 });
