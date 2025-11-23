@@ -1,29 +1,29 @@
 const CACHE_NAME = "smart-campus-v1";
 
 const ASSETS_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/campus_navigator.html",
-  "/start_nav.html",
-  "/routes.html",
-  "/nav_map.html",
-  "/view_map.html",
-  "/arrived.html",
-  "/location_detail.html",
+  "./",
+  "./index.html",
+  "./campus_navigator.html",
+  "./start_nav.html",
+  "./routes.html",
+  "./nav_map.html",
+  "./view_map.html",
+  "./arrived.html",
+  "./location_detail.html",
 
-  "/css/mobile/profile.css",
-  "/css/tablet/profile.css",
-  "/css/destop/profile.css",
+  "./css/mobile/profile.css",
+  "./css/tablet/profile.css",
+  "./css/destop/profile.css",
 
-  "/js/pwa.js",        // 👈 global PWA file
-  "/js/main.js",       // only for index.html
-  "/js/routes.js",
-  "/js/nav_map.js",
-  "/js/view_map.js",
-  "/js/arrived.js",
-  "/js/location_detail.js",
-  "/js/navigator.js",
-  "/js/start_nav.js"
+  "./js/pwa.js",        // 👈 global PWA file
+  "./js/main.js",       // only for index.html
+  "./js/routes.js",
+  "./js/nav_map.js",
+  "./js/view_map.js",
+  "./js/arrived.js",
+  "./js/location_detail.js",
+  "./js/navigator.js",
+  "./js/start_nav.js"
 ];
 
 self.addEventListener("install", (event) => {
