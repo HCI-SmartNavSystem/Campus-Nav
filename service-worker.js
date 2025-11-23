@@ -1,6 +1,6 @@
 // js/pwa.js
 
-// 1. Register service worker (global)
+// 1. Register service worker (keep this)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -10,11 +10,11 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// 2. Global offline/online notification
+// 2. Global offline/online notification (ONLY on change)
 document.addEventListener("DOMContentLoaded", () => {
   let messageBox = document.getElementById("message-box");
 
-  // Create one if the page doesn't have it
+  // Create one if this page doesn't have it
   if (!messageBox) {
     messageBox = document.createElement("div");
     messageBox.id = "message-box";
@@ -39,24 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
-  // 🔹 Show “online” only once per session
-  if (navigator.onLine) {
-    const alreadyShown = sessionStorage.getItem("onlineStatusShown");
-    if (!alreadyShown) {
-      showMessage("You are online.");
-      sessionStorage.setItem("onlineStatusShown", "1");
-    }
-  } else {
-    // If user opens the app while offline, tell them
+  // Track last known status per tab
+  let lastStatus = sessionStorage.getItem("lastConnectionStatus");
+  if (!lastStatus) {
+    lastStatus = navigator.onLine ? "online" : "offline";
+    sessionStorage.setItem("lastConnectionStatus", lastStatus);
+  }
+
+  function handleOffline() {
+    const previous = sessionStorage.getItem("lastConnectionStatus");
+    if (previous === "offline") return; // already offline, don't spam
+    sessionStorage.setItem("lastConnectionStatus", "offline");
     showMessage("You are offline. Showing saved content.");
   }
 
-  // 🔹 Only fire when the connection actually changes
-  window.addEventListener("offline", () => {
-    showMessage("You are offline. Showing saved content.");
-  });
-
-  window.addEventListener("online", () => {
+  function handleOnline() {
+    const previous = sessionStorage.getItem("lastConnectionStatus");
+    if (previous === "online") return; // already online, don't spam
+    sessionStorage.setItem("lastConnectionStatus", "online");
     showMessage("You are back online.");
-  });
+  }
+
+  // 🔹 Only react to actual changes
+  window.addEventListener("offline", handleOffline);
+  window.addEventListener("online", handleOnline);
 });
