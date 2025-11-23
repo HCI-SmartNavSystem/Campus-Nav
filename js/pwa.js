@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showMessage("You are offline. Showing saved content.");
     } else {
       // Optional: only show this if you want a "back online" toast
-      showMessage("You are back online.");
+      showMessage("You are online.");
     }
   }
 
