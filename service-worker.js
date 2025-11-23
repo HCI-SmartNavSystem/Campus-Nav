@@ -50,6 +50,7 @@ self.addEventListener("activate", event => {
   );
 });
 
+// ✅ Works for all URLs with query params, like ?destination=Parking
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then(cached => {
