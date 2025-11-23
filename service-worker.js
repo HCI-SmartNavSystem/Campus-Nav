@@ -45,8 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("offline", () => {
     showMessage("You are offline. Showing saved content.");
   });
-
-  window.addEventListener("online", () => {
-    showMessage("You are back online.");
-  });
 });
