@@ -55,3 +55,27 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("offline", updateConnectionStatus);
   window.addEventListener("online", updateConnectionStatus);
 });
+
+function toggleMonochrome() {
+    document.body.classList.toggle('monochrome');
+}
+
+// Create the CSS rule dynamically
+let style = document.createElement('style');
+style.innerHTML = `
+.monochrome {
+    filter: grayscale(100%);
+}
+`;
+document.head.appendChild(style);
+
+function toggleMonochrome() {
+    document.body.classList.toggle('monochrome');
+    localStorage.setItem('monochrome', document.body.classList.contains('monochrome'));
+}
+
+window.onload = () => {
+    if (localStorage.getItem('monochrome') === 'true') {
+        document.body.classList.add('monochrome');
+    }
+};

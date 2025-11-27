@@ -1,11 +1,9 @@
-
-<html>
-    <head>
-            <title>
-                Campus Navigator
-            </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Campus Navigator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/mobile/destination.css" media="screen and (max-width: 767px)">
     <link rel="stylesheet" href="css/tablet/destination.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
@@ -13,73 +11,102 @@
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0d6efd">
+</head>
+<body>
+    <button 
+    onclick="toggleMonochrome()" 
+    style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        padding: 8px 14px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    "
+>
+    Black & White
+</button>
 
-    </head>
-        <body>
-        <header class="header-bar">
+    <header class="header-bar">
         <div class="header-content">
-        <h1>Smart Campus Navigator</h1>
-        <p>Find your way around campus!</p>
+            <h1>Smart Campus Navigator</h1>
+            <p>Find your way around campus!</p>
         </div>
-        </header>
+    </header>
 
-        <main class="main-container">
+    <main class="main-container">
 
-            <div class="search-box">
-            Where would you like to go today?
-            </div>
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Where would you like to go today?"
+                aria-label="Search campus destination"
+            >
+            <span class="search-icon">&#128269;</span>
+        </div>
+        
+        <h2 class="history-header" id="history-header" style="display:none;">Recent Searches</h2>
+        <ul class="history-list" id="search-history-list">
+        </ul>
+        
+        <h2 class="list-header">Main Buildings</h2>
 
-            <h2 class="list-header">Main Buildings</h2>
+        <div class="card-list" id="destination-list">
 
-            <div class="card-list" id="destination-list">
-
-                <div class="destination-card" data-destination="Library">
-                        <div class="card-icon library">📚</div>
-                        <div class="card-details">
-                        <p>Library</p>
-                        <small>0.3 km away</small>
-                        </div>
-                    </div>
-
-                    <div class="destination-card" data-destination="Canteen">
-                        <div class="card-icon canteen">🍔</div>
-                        <div class="card-details">
-                        <p>Canteen</p>
-                        <small>0.5 km away</small>
-                        </div>
-                    </div>
-
-                    <div class="destination-card" data-destination="Parking">
-                        <div class="card-icon parking">🅿️</div>
-                        <div class="card-details">
-                        <p>Parking</p>
-                        <small>0.8 km away</small>
-                        </div>
-                    </div>
-
-                    <div class="destination-card" data-destination="Admin Office">
-                        <div class="card-icon admin">🏢</div>
-                        <div class="card-details">
-                        <p>Admin Office</p>
-                        <small>0.4 km away</small>
-                        </div>
-                    </div>
-
-                    <div class="destination-card" data-destination="Labs">
-                        <div class="card-icon labs">🔬</div>
-                        <div class="card-details">
-                        <p>Labs</p>
-                        <small>0.6 km away</small>
-                    </div>
+            <div class="destination-card" data-destination="Library">
+                <div class="card-icon library">📚</div>
+                <div class="card-details">
+                    <p>Library</p>
+                    <small>0.3 km away</small>
                 </div>
-
             </div>
 
-        <div id="message-box" style="display: none;"></div>
+            <div class="destination-card" data-destination="Canteen">
+                <div class="card-icon canteen">🍔</div>
+                <div class="card-details">
+                    <p>Canteen</p>
+                    <small>0.5 km away</small>
+                </div>
+            </div>
 
-        </main>
+            <div class="destination-card" data-destination="Parking">
+                <div class="card-icon parking">🅿️</div>
+                <div class="card-details">
+                    <p>Parking</p>
+                    <small>0.8 km away</small>
+                </div>
+            </div>
+
+            <div class="destination-card" data-destination="Admin Office">
+                <div class="card-icon admin">🏢</div>
+                <div class="card-details">
+                    <p>Admin Office</p>
+                    <small>0.4 km away</small>
+                </div>
+            </div>
+
+            <div class="destination-card" data-destination="Labs">
+                <div class="card-icon labs">🔬</div>
+                <div class="card-details">
+                    <p>Labs</p>
+                    <small>0.6 km away</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="message-box" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; border-radius: 8px; background-color: #38c1c4; color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: none; z-index: 1000;"></div>
+
+    </main>
+
     <script src="js/navigator.js"></script>
     <script src="js/pwa.js"></script>
 
-    </body>
+</body>
 </html>
